@@ -1,0 +1,47 @@
+{
+  "name": "list-enter-hack",
+  "displayName": "List Enter Hack",
+  "description": "Shift+Enter と Ctrl+Enter をリスト用にハックする拡張",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.90.0"
+  },
+  "activationEvents": [
+    "onCommand:listEnter.shiftEnter",
+    "onCommand:listEnter.ctrlEnter"
+  ],
+  "contributes": {
+    "commands": [
+      {
+        "command": "listEnter.shiftEnter",
+        "title": "List Enter: Shift Enter"
+      },
+      {
+        "command": "listEnter.ctrlEnter",
+        "title": "List Enter: Ctrl Enter"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "listEnter.shiftEnter",
+        "key": "shift+enter",
+        "when": "editorTextFocus"
+      },
+      {
+        "command": "listEnter.ctrlEnter",
+        "key": "ctrl+enter",
+        "when": "editorTextFocus"
+      }
+    ]
+  },
+  "main": "./out/extension.js",
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./"
+  },
+  "devDependencies": {
+    "@types/node": "^24.5.2",
+    "@types/vscode": "^1.90.0",
+    "typescript": "^5.0.0"
+  }
+}

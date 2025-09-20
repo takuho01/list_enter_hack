@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "target": "ES2020",
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "rootDir": "src",
+    "outDir": "out",
+    "strict": true,
+    "sourceMap": true,
+
+    // ここがポイント
+    "lib": ["ES2020"],          // DOM は不要（拡張は Node）
+    "types": ["node", "vscode"] // ← これで console などが解決
+  },
+  "include": ["src"]
+}
