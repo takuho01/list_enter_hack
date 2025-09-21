@@ -2,7 +2,7 @@
   "name": "list-enter-hack",
   "displayName": "List Enter Hack",
   "description": "Shift+Enter と Ctrl+Enter をリスト用にハックする拡張",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "engines": {
     "vscode": "^1.90.0"
   },
@@ -19,7 +19,9 @@
       {
         "command": "listEnter.ctrlEnter",
         "title": "List Enter: Ctrl Enter"
-      }
+      },
+      { "command": "listEnter.ctrlShiftEnter", "title": "List Enter: Ctrl+Shift+Enter" },
+      { "command": "listEnter.smartDelete", "title": "List Enter: Smart Delete" }
     ],
     "keybindings": [
       {
@@ -31,7 +33,18 @@
         "command": "listEnter.ctrlEnter",
         "key": "ctrl+enter",
         "when": "editorTextFocus"
+      },
+      {
+        "command": "listEnter.ctrlShiftEnter",
+        "key": "enter",
+        "when": "editorTextFocus && editorLangId == markdown"
+      },
+      {
+        "command": "listEnter.smartDelete",
+        "key": "backspace",
+        "when": "editorTextFocus"
       }
+      
     ]
   },
   "main": "./out/extension.js",
