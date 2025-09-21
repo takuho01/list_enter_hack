@@ -42,7 +42,7 @@
       {
         "command": "listEnter.smartDelete",
         "key": "backspace",
-        "when": "editorTextFocus"
+        "when": "editorTextFocus && editorLangId == markdown"
       }
       
     ]
